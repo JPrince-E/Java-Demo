@@ -21,10 +21,10 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 WORKDIR /app
 
 # Copy the Spring Boot executable JAR file into the container
-COPY target/theodore-0.0.1-SNAPSHOT.jar /app
+COPY target/*.jar app.jar
 
 # Expose the port that the Spring Boot application listens on
 EXPOSE 8082
 
 # Run the Spring Boot application when the container starts
-CMD ["java", "-jar", "theodore-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "app.jar"]
